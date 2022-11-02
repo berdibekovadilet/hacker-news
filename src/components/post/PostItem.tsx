@@ -27,7 +27,7 @@ const PostItem = (props: { storyId: any }) => {
     <div className={styles.wrapper}>
       <div className={styles.row}>
         <h3 className="clicable">{story.title}</h3>
-        <p className="clicable">({story.url})</p>
+        <p className="clicable">({story.url.split("//")[1].split("/")[0]})</p>
       </div>
       <div className={styles.row}>
         <p>
@@ -45,22 +45,3 @@ const PostItem = (props: { storyId: any }) => {
 };
 
 export default PostItem;
-
-// {props.posts.map((post) => (
-//    <div className={styles.wrapper} key={post.id}>
-//      <div className={styles.row}>
-//        <h3>{(newsNumber += 1)}.</h3>
-//        <h3 className="clicable">{post.title}</h3>
-//        <p className="clicable">({post.source})</p>
-//      </div>
-//      <div className={styles.row}>
-//        <p>{post.data}</p>
-//        <div className="vl"></div>
-//        <p>{post.points} points</p>
-//        <div className="vl"></div>
-//        <p>by {post.author}</p>
-//        <div className="vl"></div>
-//        <p className="clicable">{post.comments} comments</p>
-//      </div>
-//    </div>
-//  ))}
