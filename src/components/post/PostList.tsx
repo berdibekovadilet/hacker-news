@@ -20,13 +20,21 @@ const posts: Post[] = [
     comments: 28,
   },
   {
-   id: 2,
-   title: "Ad blocking is under attack",
-   source: "adguard.com",
-   data: "02.11.2022",
-   points: 465,
-   comments: 28,
- },
+    id: 2,
+    title: "Ad blocking is under attack",
+    source: "adguard.com",
+    data: "02.11.2022",
+    points: 465,
+    comments: 28,
+  },
+  {
+    id: 3,
+    title: "Ad blocking is under attack",
+    source: "adguard.com",
+    data: "02.11.2022",
+    points: 465,
+    comments: 28,
+  },
 ];
 const PostList = () => {
   return (
