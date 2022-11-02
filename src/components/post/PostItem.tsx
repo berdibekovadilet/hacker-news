@@ -27,7 +27,11 @@ const PostItem = (props: { storyId: any }) => {
     <div className={styles.wrapper}>
       <div className={styles.row}>
         <h3 className="clicable">{story.title}</h3>
-        <p className="clicable">({story.url.split("//")[1].split("/")[0]})</p>
+        <p className="clicable">
+          <a target="_blank" rel="noreferrer" href={story.url}>
+            ({story.url.split("//")[1].split("/")[0]})
+          </a>
+        </p>
       </div>
       <div className={styles.row}>
         <p>
@@ -36,7 +40,7 @@ const PostItem = (props: { storyId: any }) => {
         <div className="vl"></div>
         <p>{story.score} points</p>
         <div className="vl"></div>
-        <p>author {story.by}</p>
+        <p>author: {story.by}</p>
         <div className="vl"></div>
         <p className="clicable">{story.kids} comments</p>
       </div>
