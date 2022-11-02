@@ -1,9 +1,10 @@
+import HeroImage from "./components/heroImage/HeroImage";
 import "./styles/App.scss";
 
 function App() {
   return (
     <div className="App">
-     Start
+      <HeroImage />
     </div>
   );
 }

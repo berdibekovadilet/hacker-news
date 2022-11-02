@@ -1,0 +1,28 @@
+.container {
+   position: relative;
+   display: inline-block;
+   .textWrapper {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      max-width: 40%;
+      color: white;
+      h1 {
+         font-size: 3vw;
+         font-weight: 700;
+      }
+      h3 {
+         font-size: 1.2vw;
+         font-weight: 700;
+      }
+   }
+
+   .heroImage {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: bottom;
+      display: block;
+   }
+}
+
