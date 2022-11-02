@@ -1,47 +1,17 @@
-import styles from "./Post.module.scss";
+import { useEffect, useState } from "react";
+import { getStories } from "../../services/api";
 import PostItem from "./PostItem";
 
-export interface Post {
-  id: number;
-  title: string;
-  source: string;
-  data: string;
-  points: number;
-  comments: number;
-}
+const PostList: Function = (): JSX.Element[] => {
+  const [storyIds, setStoryIds] = useState([]);
 
-const posts: Post[] = [
-  {
-    id: 1,
-    title: "NASA finds super-emitters of methane",
-    source: "smithsonianmag.com",
-    data: "02.11.2022",
-    points: 465,
-    comments: 28,
-  },
-  {
-    id: 2,
-    title: "Ad blocking is under attack",
-    source: "adguard.com",
-    data: "02.11.2022",
-    points: 465,
-    comments: 28,
-  },
-  {
-    id: 3,
-    title: "Ad blocking is under attack",
-    source: "adguard.com",
-    data: "02.11.2022",
-    points: 465,
-    comments: 28,
-  },
-];
-const PostList = () => {
-  return (
-    <div className={styles.container}>
-      <PostItem posts={posts} />
-    </div>
-  );
+  useEffect(() => {
+    getStories().then((ids) => setStoryIds(ids));
+  }, []);
+
+  return storyIds
+    .slice(0, 10)
+    .map((storyId, i) => <PostItem key={i} storyId={storyId} />);
 };
 
 export default PostList;
