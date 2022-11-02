@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { mapTime } from "../../helpers/mapTime";
 import { getStory } from "../../services/api";
 import styles from "./Post.module.scss";
 
@@ -22,8 +23,6 @@ const PostItem = (props: { storyId: any }) => {
     });
   }, []);
 
-  // const { title, kids, url, by, score, time } = story;
-
   return story && story.url ? (
     <div className={styles.wrapper}>
       <div className={styles.row}>
@@ -31,11 +30,13 @@ const PostItem = (props: { storyId: any }) => {
         <p className="clicable">({story.url})</p>
       </div>
       <div className={styles.row}>
-        <p>{story.time}</p>
+        <p>
+          posted: <time dateTime={story.time}>{mapTime(story.time)} ago</time>
+        </p>
         <div className="vl"></div>
         <p>{story.score} points</p>
         <div className="vl"></div>
-        <p>by {story.by}</p>
+        <p>author {story.by}</p>
         <div className="vl"></div>
         <p className="clicable">{story.kids} comments</p>
       </div>

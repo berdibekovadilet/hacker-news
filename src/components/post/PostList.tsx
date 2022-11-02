@@ -10,7 +10,7 @@ const PostList: Function = (): JSX.Element[] => {
   }, []);
 
   return storyIds
-    .slice(0, 10)
+    .slice(0, 20)
     .map((storyId, i) => <PostItem key={i} storyId={storyId} />);
 };
 
