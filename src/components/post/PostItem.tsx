@@ -12,7 +12,7 @@ interface IStory {
   by?: string;
   score?: number;
 }
-const PostItem = (props: { storyId: any }) => {
+const PostItem = (props: { storyId: any; rank: number }) => {
   const [story, setStory] = useState<IStory>({});
 
   useEffect(() => {
@@ -26,6 +26,7 @@ const PostItem = (props: { storyId: any }) => {
   return story && story.url ? (
     <div className={styles.wrapper}>
       <div className={styles.row}>
+        <h3>{props.rank}.</h3>
         <h3 className="clicable">{story.title}</h3>
         <p className="clicable">
           <a target="_blank" rel="noreferrer" href={story.url}>
